@@ -1,0 +1,4 @@
+== Gallery
+
+This is a Rails 3.1 gallery app using Carrierwave and Uploadify, as demonstrated here: http://blog.assimov.net/post/4306595758/multi-file-upload-with-uploadify-and-carrierwave-on
+
