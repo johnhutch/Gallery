@@ -20,6 +20,9 @@ end
 gem 'jquery-rails'
 gem 'high_voltage'
 gem 'capistrano'
+gem 'redcarpet', '< 2.0.0'
+gem 'activeadmin'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
