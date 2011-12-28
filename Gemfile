@@ -22,6 +22,7 @@ gem 'high_voltage'
 gem 'capistrano'
 gem 'redcarpet', '< 2.0.0'
 gem 'activeadmin'
+gem 'devise'
 
 
 # To use ActiveModel has_secure_password
