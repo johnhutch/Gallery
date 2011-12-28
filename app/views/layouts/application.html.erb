@@ -31,7 +31,7 @@
   <!-- All JavaScript at the bottom, except for Modernizr / Respond.
        Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
        For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+  <script src="/modernizr-2.0.6.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 
@@ -41,6 +41,18 @@
     <header>
       <h1>The Family Hutch: Ruby</h1>
     </header>
+
+    <section id="usernav">
+        <div id="user_nav">
+        <% if user_signed_in? %>
+          Signed in as <%= current_user.email %>. Not you?
+          <%= link_to "Sign out", destroy_user_session_path, :method => "delete" %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path %> or
+          <%= link_to "Sign in", new_user_session_path %>
+        <% end %>
+</div>  
+    </section>
     <div id="main" role="main">
         <%= notice_block %>
         <%= alert_block %>

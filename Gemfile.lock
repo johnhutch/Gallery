@@ -63,6 +63,8 @@ GEM
     execjs (1.2.11)
       multi_json (~> 1.0)
     fastercsv (1.5.4)
+    formalize-rails (0.0.5)
+      railties (~> 3.1.0.rc1)
     formtastic (1.2.4)
       actionpack (>= 2.3.7)
       activesupport (>= 2.3.7)
@@ -165,6 +167,7 @@ DEPENDENCIES
   capistrano
   coffee-rails (~> 3.1.1)
   devise
+  formalize-rails
   high_voltage
   jquery-rails
   json

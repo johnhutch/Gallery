@@ -23,7 +23,7 @@ gem 'capistrano'
 gem 'redcarpet', '< 2.0.0'
 gem 'activeadmin'
 gem 'devise'
-
+gem 'formalize-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
