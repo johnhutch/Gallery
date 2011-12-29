@@ -24,6 +24,9 @@ gem 'redcarpet', '< 2.0.0'
 gem 'activeadmin'
 gem 'devise'
 gem 'formalize-rails'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'flash_cookie_session'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
