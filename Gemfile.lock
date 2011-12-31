@@ -73,6 +73,7 @@ GEM
       actionpack (>= 2.3.7)
       activesupport (>= 2.3.7)
       i18n (~> 0.4)
+    haml (3.1.4)
     has_scope (0.5.1)
     high_voltage (1.0.1)
     highline (1.6.9)
@@ -177,6 +178,7 @@ DEPENDENCIES
   devise
   flash_cookie_session
   formalize-rails
+  haml
   high_voltage
   jquery-rails
   json

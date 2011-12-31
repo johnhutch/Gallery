@@ -27,6 +27,7 @@ gem 'formalize-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'flash_cookie_session'
+gem 'haml'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

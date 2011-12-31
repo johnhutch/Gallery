@@ -1,5 +1,7 @@
 Familyhutch::Application.routes.draw do
-  resources :galleries
+  resources :galleries do
+    resources :photos, :only => [:create, :destroy]
+  end
 
   ActiveAdmin.routes(self)
 

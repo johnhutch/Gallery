@@ -7,4 +7,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.formalize
+//= require uploadify
+//= require swfobject
 //= require_tree .
