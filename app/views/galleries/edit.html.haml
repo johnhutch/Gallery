@@ -1,6 +1,7 @@
 - key = Rails.application.config.session_options[:key]
 
 = content_for :scripts do
+  <script src="/assets/uploadify.js" type="text/javascript"></script>
   :javascript
     var upload_params = {
       '#{key}' : '#{cookies[key]}',
@@ -27,5 +28,3 @@
   - unless @gallery.new_record?
     = fields_for Photo.new do |f|
       = f.file_field :image, :rel => gallery_photos_path(@gallery)
-
-    

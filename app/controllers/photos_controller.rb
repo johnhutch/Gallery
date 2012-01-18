@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   
-  before_filter :require_user
+#  before_filter :require_user
   before_filter :find_gallery
   before_filter :find_or_build_photo
   
