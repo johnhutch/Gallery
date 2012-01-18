@@ -1,0 +1,17 @@
+defaults: &defaults
+  adapter: mysql
+  username: root
+  password: 
+  host: localhost
+
+development:
+  <<: *defaults
+  database: gallery_dev
+
+test:
+  <<: *defaults
+  database: gallery_test
+
+production:
+  <<: *defaults
+  database: gallery_production
