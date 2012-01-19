@@ -7,6 +7,7 @@ gem 'rails', '3.1.3'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql'
+gem 'sqlite3'
 gem 'json'
 
 # Gems used only for assets and not required
@@ -21,7 +22,7 @@ gem 'jquery-rails'
 gem 'high_voltage'
 gem 'capistrano'
 gem 'redcarpet', '< 2.0.0'
-gem 'activeadmin'
+gem "meta_search",    '>= 1.1.0.pre'
 gem 'devise'
 gem 'formalize-rails'
 gem 'carrierwave'

@@ -9,3 +9,4 @@ db/schema.rb
 system.gems
 config/database.yml
 public/uploads
+config/initializers/mail_settings.rb

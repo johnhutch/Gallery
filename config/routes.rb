@@ -3,10 +3,6 @@ Familyhutch::Application.routes.draw do
     resources :photos, :only => [:create, :destroy]
   end
 
-  ActiveAdmin.routes(self)
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-
   devise_for :users
 
   resources :posts

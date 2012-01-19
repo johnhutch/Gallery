@@ -7,3 +7,11 @@
  *= require formalize
  *= require uploadify
 */
+
+#container {position: relative;}
+#user_nav {position: absolute; top:20px; right: 20px; }
+
+
+/***** additional form styles *****/
+form .field label {display: block;}
+form .checkbox label, form .radio label {display: inline;}
