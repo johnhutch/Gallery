@@ -8,3 +8,4 @@ db/schema.rb
 .bundle
 system.gems
 config/database.yml
+config/initializers/mail_settings.rb

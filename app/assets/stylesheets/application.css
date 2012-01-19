@@ -7,3 +7,6 @@
  *= require formalize
  *= require uploadify
 */
+
+#container {position: relative;}
+#user_nav {position: absolute; top:20px; right: 20px; }
