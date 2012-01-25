@@ -1,5 +1,5 @@
 <article id="post">
   <h3><%= @post.title %></h3>
-
+  <div id="byline">Posted by <%= @post.user.email %></div>
   <%= markdown @post.body %>
 </article>

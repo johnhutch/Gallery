@@ -1,4 +1,4 @@
-Familyhutch::Application.routes.draw do
+Gallery::Application.routes.draw do
   resources :galleries do
     resources :photos, :only => [:create, :destroy]
   end
