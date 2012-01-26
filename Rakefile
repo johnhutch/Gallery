@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Gallery::Application.load_tasks
+FancyGallery::Application.load_tasks

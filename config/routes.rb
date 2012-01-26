@@ -1,4 +1,4 @@
-Gallery::Application.routes.draw do
+FancyGallery::Application.routes.draw do
   resources :galleries do
     resources :photos, :only => [:create, :destroy]
   end
