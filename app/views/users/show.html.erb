@@ -1,0 +1,175 @@
+<% content_for :stylesheets do %>
+  <!-- Facebook OpenGraph meta tags -->
+  <meta property="og:title" content="<%= page_title %>"/>
+  <meta property="og:url" content="<%= request.url %>"/>
+  <meta property="og:image" content="http://ia.media-imdb.com/rock.jpg"/>
+  <meta property="og:site_name" content="<%= current_site.name %>"/>
+  <meta property="og:image" content="<%= @user.avatar.url(:contentpic) %>"/>
+  <!-- /Facebook OpenGraph meta tags -->
+<% end %>
+
+<h2><%= @user.display_name %></h2>
+<% @page_title = @user.display_name %>
+
+
+<% gallery = Gallery.published.where(:twelve_user_id => @user.id).order("published_at DESC").first rescue nil %>
+<% if gallery %>
+  <%= link_to image_tag(@user.avatar.url(:hero)), seo_url(gallery) %>
+<% else %>
+  <%= image_tag @user.avatar.url(:hero) %>
+<% end %>
+
+<%= render :partial => "shared/sharethis" %>
+
+<% if (@user.demographic) %>
+  <% if current_user && (current_user.role? :admin) %>
+  	<ul id="demographics" class="demographics">
+  	    <div class="notice">
+    	    <h3>Admin-only fields</h3>
+      		<% unless @user.demographic.how_did_you_hear.blank? %><li><h4>How did you hear about us?</h4><p><%= @user.demographic.how_did_you_hear %></p></li><% end %>
+      		  <% unless @user.demographic.hometown.nil? %><li><h4>Hometown</h4><p><%= @user.demographic.hometown %></p></li><% end %>
+      		  <% unless @user.demographic.hometown_state.nil? %><li><h4>Home State</h4><p><%= @user.demographic.hometown_state %></p></li><% end %>
+      		  <% unless @user.demographic.school_city.blank? %><li><h4>School City</h4><p><%= @user.demographic.school_city %></p></li><% end %>
+      		  <% unless @user.demographic.school_state.blank? %><li><h4>School State</h4><p><%= @user.demographic.school_state %></p></li><% end %>
+        		<% unless @user.demographic.major_minor.blank? %><li><h4>Major/Minor</h4><p><%= @user.demographic.major_minor %></p></li><% end %>
+        		<% unless @user.demographic.gpa.blank? %><li><h4>GPA</h4><p><%= @user.demographic.gpa %></p></li><% end %>
+      		<% unless @user.demographic.grad_date.blank? %><li><h4>Graduation Date</h4><p><%= @user.demographic.grad_date_string %></p></li><% end %>
+
+        		<% unless @user.demographic.height.blank? %><li><h4>Height</h4><p><%= @user.demographic.height %></p></li><% end %>
+        		<% unless @user.demographic.eye_color.blank? %><li><h4>Eye Color</h4><p><%= @user.demographic.eye_color %></p></li><% end %>
+      		<% unless @user.demographic.weight.blank? %><li><h4>Weight</h4><p><%= @user.demographic.weight %></p></li><% end %>
+      		<% unless @user.demographic.cup_size.blank? %><li><h4>Cup Size</h4><p><%= @user.demographic.cup_size %></p></li><% end %>
+      		<% unless @user.demographic.age.blank? %><li><h4>Age</h4><p><%= @user.demographic.age %></p></li><% end %>
+      		<% unless @user.demographic.birth_date.blank? %><li><h4>Birth Date</h4><p><%= @user.demographic.birth_date_string %></p></li><% end %>
+      		<% unless @user.demographic.myspace_url.blank? %><li><h4>Myspace URL</h4><p><%= @user.demographic.myspace_url %></p></li><% end %>
+      		<% unless @user.demographic.facebook_url.blank? %><li><h4>Facebook URL</h4><p><%= @user.demographic.facebook_url %></p></li><% end %>
+      		<% unless @user.demographic.twitter_username.blank? %><li><h4>Twitter Username</h4><p><%= @user.demographic.twitter_username %></p></li><% end %> 	
+      		
+    		</div>
+  	  
+		
+  	</ul>
+	<% end %>
+	
+	<ol class="demographics">
+    <% unless @user.demographic.mac_pc.blank? %>
+      <li><h4>Mac or PC:</h4>
+         <p><%= @user.demographic.mac_pc %></p>
+        </li>
+    <% end %>
+
+    <% unless @user.demographic.facebook_twitter.blank? %>
+      <li><h4>Facebook or Twitter:</h4>
+         <p><%= @user.demographic.facebook_twitter %></p>
+        </li>
+    <% end %>
+
+    <% unless @user.demographic.basketball_football.blank? %>
+      <li><h4>Basketball or Football:</h4>
+         <p><%= @user.demographic.basketball_football %></p>
+        </li>
+    <% end %>
+
+    <% unless @user.demographic.party_chill.blank? %>
+      <li><h4>Party or Chill:</h4>
+         <p><%= @user.demographic.party_chill %></p>
+        </li>
+    <% end %>
+
+    <% unless @user.demographic.sandals_stilettos.blank? %>
+      <li><h4>Sandals or Stilettos:</h4>
+         <p><%= @user.demographic.sandals_stilettos %></p>
+        </li>
+    <% end %>
+
+    <% unless @user.demographic.east_west.blank? %>
+      <li><h4>East Coast or West Coast:</h4>
+         <p><%= @user.demographic.east_west %></p>
+        </li>
+    <% end %>
+
+    <% unless @user.demographic.female_crush.blank? %>
+      <li><h4>Who is your female crush?</h4>
+         <p><%= @user.demographic.female_crush %></p>
+        </li>
+    <% end %>
+
+    <% unless @user.demographic.dream_car.blank? %>
+      <li><h4>What is your dream car?</h4>
+         <p><%= @user.demographic.dream_car %></p>
+        </li>
+    <% end %>
+
+    <% unless @user.demographic.artist_athlete.blank? %>
+      <li><h4>Who do you find more attractive the Artist or Athlete?</h4>
+         <p><%= @user.demographic.artist_athlete %></p>
+        </li>
+    <% end %>
+
+    <% unless @user.demographic.birthday_musician.blank? %>
+      <li><h4>If you could have any musician sing sing at your birthday who would it be?</h4>
+         <p><%= @user.demographic.birthday_musician %></p>
+        </li>
+    <% end %>
+
+    <% unless @user.demographic.change_yourself.blank? %>
+      <li><h4>If you could change something about yourself what would it be?</h4>
+         <p><%= @user.demographic.change_yourself %></p>
+        </li>
+    <% end %>
+
+    <% unless @user.demographic.sexiest_feature.blank? %>
+      <li><h4>What is your sexiest feature?</h4>
+         <p><%= @user.demographic.sexiest_feature %></p>
+        </li>
+    <% end %>
+
+    <% unless @user.demographic.sexiest_in.blank? %>
+      <li><h4>What do you feel sexiest in?</h4>
+         <p><%= @user.demographic.sexiest_in %></p>
+        </li>
+    <% end %>
+
+    <% unless @user.demographic.ipod_now.blank? %>
+      <li><h4>What is playing on your ipod right now?</h4>
+         <p><%= @user.demographic.ipod_now %></p>
+        </li>
+    <% end %>
+
+    <% unless @user.demographic.tattoos.blank? %>
+      <li><h4>How many tattoos do you have?</h4>
+         <p><%= @user.demographic.tattoos %></p>
+        </li>
+    <% end %>
+
+    <% unless @user.demographic.blondes_fun.blank? %>
+      <li><h4>Do blondes really have more fun?</h4>
+         <p><%= @user.demographic.blondes_fun %></p>
+        </li>
+    <% end %>
+
+    <% unless @user.demographic.last_date.blank? %>
+      <li><h4>Sum up your last date in 5 words</h4>
+         <p><%= @user.demographic.last_date %></p>
+        </li>
+    <% end %>
+
+    <% unless @user.demographic.superpower.blank? %>
+      <li><h4>If you could have any superpower what would it be?</h4>
+         <p><%= @user.demographic.superpower %></p>
+        </li>
+    <% end %>
+	</ol>
+
+	<% galleries = Gallery.published.where(:twelve_user_id => @user.id) rescue nil %>	
+	<% unless galleries.empty? %>
+  	<section id="user_galleries">
+  		<h3><%= @user.display_name %>'s Galleries</h3>
+  		<ul class="clearfix galleries">
+  		<% galleries.each do |gallery| %>
+  				<li><%= link_to image_tag(gallery.featured_photo.image.url(:gallery_thumb)), seo_url(gallery) %></li>
+  		<% end %>
+  		</ul>
+  	</section>
+	<% end %>
+<% end %>
