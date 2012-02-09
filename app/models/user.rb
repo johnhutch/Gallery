@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  
+  has_and_belongs_to_many :roles
   has_many :galleries
   has_many :posts
   
@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
+
+  def role?(role)
+      return !!self.roles.find_by_name(role.to_s)
+  end
 end

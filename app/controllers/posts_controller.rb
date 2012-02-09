@@ -1,6 +1,5 @@
 class PostsController < InheritedResources::Base
-
-  before_filter :authenticate_user!, :except => [:show, :index]
+  load_and_authorize_resource
     
   protected
     def begin_of_association_chain
