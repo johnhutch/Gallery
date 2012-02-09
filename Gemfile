@@ -30,6 +30,8 @@ gem 'mini_magick'
 gem 'flash_cookie_session'
 gem 'haml'
 gem 'inherited_resources'
+gem 'cancan'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
