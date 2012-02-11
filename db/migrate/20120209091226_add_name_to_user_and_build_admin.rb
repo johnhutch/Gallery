@@ -13,11 +13,13 @@ class AddNameToUserAndBuildAdmin < ActiveRecord::Migration
       u.email = "johnhutch+gallery@gmail.com"
       u.password = u.password_confirmation = "chester"
       u.name = "Hutch"
-      u.confirmed_at = Time.now
     end
     
     # Assign roles to default admin user
     user.roles << admin_role
+    user.roles << author_role
+    user.roles << uploader_role
+    user.roles << commenter_role
   end
 
   def self.down

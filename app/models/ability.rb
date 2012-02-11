@@ -7,7 +7,7 @@ class Ability
     if user.role?     :admin
                         can :manage, :all
 
-    elseif user.role? :uploader
+    elsif user.role? :uploader
                         can :read, :all
                         cannot :manage, :all
                         can :create [Comment, Gallery, Photo]
@@ -18,7 +18,7 @@ class Ability
                           p.try(:user) == user
                         end
 
-    elseif user.role? :author
+    elsif user.role? :author
                         can :read, :all
                         cannot :manage, :all
                         can :create [Comment, Post]
@@ -29,7 +29,7 @@ class Ability
                           p.try(:user) == user
                         end
     
-    elseif user.role? :commenter
+    elsif user.role? :commenter
                         can :read, :all
                         cannot :manage, :all
                         can :create, Comment
