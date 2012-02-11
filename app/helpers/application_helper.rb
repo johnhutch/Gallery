@@ -11,4 +11,10 @@ module ApplicationHelper
   def alert_block
     %Q(<section id="alert">#{alert}</section>).html_safe if alert 
   end
+
+  def parent_url_string
+    parent = controller.controller_name.singularize
+    comments_path(:parent_type => parent, :parent_id => controller.instance_variable_get("@#{parent}").id)
+  end
+  
 end

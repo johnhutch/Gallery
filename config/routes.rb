@@ -9,6 +9,7 @@ FancyGallery::Application.routes.draw do
   end
 
   resources :posts
+  resources :comments
 
 
   root :to => 'high_voltage/pages#show', :id => 'front'

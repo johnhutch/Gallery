@@ -1,19 +1,13 @@
+<h2><%= @gallery.title %></h2>
+<section class="byline">Uploaded by <%= @gallery.user.name %>
 
-<p>
-  <b>Title:</b>
-  <%= @gallery.title %>
-</p>
+<%= markdown @gallery.description %>
 
-<p>
-  <b>Description:</b>
-  <%= @gallery.description %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @gallery.user_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
-<%= link_to 'Back', galleries_path %>
+<section id="comments">
+  <h3>Comments</h3>
+	<% if @post.comments.blank? %>
+		<p>This post has no comments</p>
+	<% end %>
+  <%= render :partial => 'layouts/comment', :collection => @post.comments %>
+  <%= render :partial => 'layouts/new_comment', :locals => {:type => "post"} %> 
+</section>
