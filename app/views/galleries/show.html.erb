@@ -2,12 +2,14 @@
 <section class="byline">Uploaded by <%= @gallery.user.name %>
 
 <%= markdown @gallery.description %>
-
+<% for photo in @gallery.photos do %>
+  <%= image_tag photo.image_url(:thumb) if photo.image? %>
+<% end %>
 <section id="comments">
   <h3>Comments</h3>
-	<% if @post.comments.blank? %>
-		<p>This post has no comments</p>
+	<% if @gallery.comments.blank? %>
+		<p>This gallery has no comments</p>
 	<% end %>
-  <%= render :partial => 'layouts/comment', :collection => @post.comments %>
+  <%= render :partial => 'layouts/comment', :collection => @gallery.comments %>
   <%= render :partial => 'layouts/new_comment', :locals => {:type => "post"} %> 
 </section>

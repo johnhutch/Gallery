@@ -10,7 +10,7 @@ class Ability
     elsif user.role? :uploader
                         can :read, :all
                         cannot :manage, :all
-                        can :create [Comment, Gallery, Photo]
+                        can :create, [Comment, Gallery, Photo]
                         can :update, [Gallery, Photo] do |p|
                           p.try(:user) == user
                         end
@@ -21,7 +21,7 @@ class Ability
     elsif user.role? :author
                         can :read, :all
                         cannot :manage, :all
-                        can :create [Comment, Post]
+                        can :create, [Comment, Post]
                         can :update, Post do |p|
                           p.try(:user) == user
                         end
@@ -43,6 +43,7 @@ class Ability
     else              # guest
                         can :read, :all
                         cannot :manage, :all
+                        can :show, [Gallery, Post]
     end
   end
 end

@@ -1,3 +1,3 @@
-<h2>Welcome to the front page!</h2>
-
-You can access this file at /app/views/pages/front.html.erb. This front page uses the high_voltage gem for easy static page creation and routing. See https://github.com/thoughtbot/high_voltage for more. 
+<% for gallery in Gallery.all do %>
+  <%= link_to gallery.title, gallery_path(gallery) %>
+<% end %>
