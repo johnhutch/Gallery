@@ -44,7 +44,7 @@ class GalleriesController < ApplicationController
 
     respond_to do |format|
       if @gallery.save
-        format.html { redirect_to @gallery, :notice => 'Gallery was successfully created.' }
+        format.html { redirect_to edit_gallery_path(@gallery), :notice => 'Gallery was created. Now upload some photos.' }
         format.json { render :json => @gallery, :status => :created, :location => @gallery }
       else
         format.html { render :action => "new" }

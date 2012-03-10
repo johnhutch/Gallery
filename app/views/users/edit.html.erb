@@ -1,4 +1,4 @@
-<h2>Editing <%= @user.display_name %></h2>
+<h2>Editing <%= @user.name %></h2>
 
 <h3>Roles assigned:</h3>
 <ul class="role_list clearfix" id="assigned_roles"><%= render :partial => 'role', :collection => @user.roles %></ul>
@@ -31,5 +31,3 @@
 			<img src="/images/ajax-loader.gif" alt="an ajax loader gif" /></p>
 	</div>
 
-
-<%= link_to "Back to user admin", users_admin_index_path %>

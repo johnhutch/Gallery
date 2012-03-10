@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to(users_admin_index_path, :notice => 'User was successfully updated.') }
+        format.html { redirect_to(@user, :notice => 'User was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to(users_admin_index_path, :notice => "User has been deleted.") }
+      format.html { redirect_to(root, :notice => "User has been deleted.") }
       format.xml  { head :ok }
     end
   end
